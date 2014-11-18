@@ -109,7 +109,6 @@ $(function(){
 						<select name="appname" style="width: 119px">
 							<option selected="selected" value="固定用车计划">固定用车计划</option>
 							<option>临时用车计划</option>
-							<option>工程用车计划</option>
 							<option>长途用车计划</option>
 						</select>
                       </TD>
