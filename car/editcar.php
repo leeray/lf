@@ -115,43 +115,11 @@ $(function(){
                       <TD>&nbsp;</TD>
                       <TD>&nbsp;</TD>
                     </TR>
-                    <TR>
-                      <TD>车名:</TD>
-                      <TD>&nbsp;</TD>
-                      <TD>&nbsp;</TD>
-                      <TD><input type="text" name="carname" value="<?php echo $rs['carname']?>"/></TD>
-                      <TD>&nbsp;</TD>
-                      <TD>&nbsp;</TD>
-                      <TD>&nbsp;</TD>
-                      <TD>&nbsp;</TD>
-                      <TD>&nbsp;</TD>
-                      <TD>&nbsp;</TD>
-                    </TR>
 					<TR>
                       <TD>品牌:</TD>
                       <TD>&nbsp;</TD>
                       <TD>&nbsp;</TD>
                       <TD><input type="text" name="carbrand" value="<?php echo $rs['carbrand']?>"/></TD>
-                      <TD>&nbsp;</TD>
-                      <TD>&nbsp;</TD>
-                      <TD>&nbsp;</TD>
-                      <TD>&nbsp;</TD>
-                      <TD>&nbsp;</TD>
-                      <TD>&nbsp;</TD>
-                    </TR>
-                    <TR>
-                      <TD>排量:</TD>
-                      <TD>&nbsp;</TD>
-                      <TD>&nbsp;</TD>
-                      <TD>
-                      	<input type="text" name="cardisplacement" value="<?php echo $rs['cardisplacement']?>"/>
-                      	<select name="cardisplacement" style="width: 100px">
-							<option value="1.0-1.6">1.0-1.6L </option>
-							<option value="1.6-2.0">1.6-2.0L </option>
-							<option value="2.0-3.0">2.0-3.0L </option>
-							<option value="3.0">>3.0L </option>
-						</select>
-                      </TD>
                       <TD>&nbsp;</TD>
                       <TD>&nbsp;</TD>
                       <TD>&nbsp;</TD>

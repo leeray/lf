@@ -1,6 +1,19 @@
 <?php 
 include("header.php");
 include("conn.php");//引入链接数据库 
+?>
+<?php
+include("../user/user_session.php");
+Session_start();
+$userSession = $_SESSION["userSession"];
+$user_type = $userSession.getUsertype();
+if ($user_type != 3) {
+  echo "<alert>没有权限查看列表，只有调度用户列表！</alert>"
+
+  return;
+}
+?>
+<?php
 
 if(!empty($_GET['keys'])){ 
 	$w=" user_name like '%".$_GET['username']."%'"; 

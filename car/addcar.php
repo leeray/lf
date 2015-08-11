@@ -109,42 +109,11 @@ $(function(){
                       <TD>&nbsp;</TD>
                       <TD>&nbsp;</TD>
                     </TR>
-                    <TR>
-                      <TD>车名:</TD>
-                      <TD>&nbsp;</TD>
-                      <TD>&nbsp;</TD>
-                      <TD><input type="text" name="carname"/></TD>
-                      <TD>&nbsp;</TD>
-                      <TD>&nbsp;</TD>
-                      <TD>&nbsp;</TD>
-                      <TD>&nbsp;</TD>
-                      <TD>&nbsp;</TD>
-                      <TD>&nbsp;</TD>
-                    </TR>
-					<TR>
+					          <TR>
                       <TD>品牌:</TD>
                       <TD>&nbsp;</TD>
                       <TD>&nbsp;</TD>
                       <TD><input type="text" name="carbrand"/></TD>
-                      <TD>&nbsp;</TD>
-                      <TD>&nbsp;</TD>
-                      <TD>&nbsp;</TD>
-                      <TD>&nbsp;</TD>
-                      <TD>&nbsp;</TD>
-                      <TD>&nbsp;</TD>
-                    </TR>
-                    <TR>
-                      <TD>排量:</TD>
-                      <TD>&nbsp;</TD>
-                      <TD>&nbsp;</TD>
-                      <TD>
-                      	<select name="cardisplacement" style="width: 100px">
-							<option value="1.0-1.6">1.0-1.6L </option>
-							<option value="1.6-2.0">1.6-2.0L </option>
-							<option value="2.0-3.0">2.0-3.0L </option>
-							<option value="3.0">>3.0L </option>
-						</select>
-                      </TD>
                       <TD>&nbsp;</TD>
                       <TD>&nbsp;</TD>
                       <TD>&nbsp;</TD>
@@ -158,10 +127,10 @@ $(function(){
                       <TD>&nbsp;</TD>
                       <TD>
                       	<select name="cartype" style="width: 100px">
-							<option value="1">皮卡 </option>
+							<option value="1">吊车 </option>
 							<option value="2">轿车 </option>
-							<option value="3">板车 </option>
-							<option value="4">吊车 </option>
+							<option value="3">越野车 </option>
+							<option value="4">特种车辆 </option>
 						</select>
                       </TD>
                       <TD>&nbsp;</TD>

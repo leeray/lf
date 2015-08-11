@@ -3,7 +3,25 @@ include("../header.php");
 include("../db/conn.php");
 ?>
 <?php
-$w=1; 
+include("../user/user_session.php");
+Session_start();
+$userSession = $_SESSION["userSession"];
+if (!$userSession) {
+  echo "<alert>你没有登陆！</alert>"
+
+  return;
+}
+$user_type = $userSession.getUsertype();
+?>
+
+<?php
+$w=1;
+
+if ($user_type != 3) {
+  $uquery = "uid = ".$userSession.getUserid()."'";
+} else {
+  $uquery = 1;
+}
 
 $workunitsql="select * from lf_workunit where $w order by id desc"; 
 $workunitquery=mysql_query($workunitsql);
@@ -38,7 +56,7 @@ if(!empty($_GET['apptime'])){
 	$apptimeid = 1;
 }
 
-$applicationsql = "select * from lf_application where $w and $cid and $apptimeid order by id desc";
+$applicationsql = "select * from lf_application where $w and $cid and $apptimeid and $uquery order by id desc";
 $applicationquery = mysql_query($applicationsql);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

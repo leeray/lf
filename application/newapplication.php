@@ -3,6 +3,17 @@ include("../header.php");
 include("../db/conn.php");
 ?>
 <?php
+include("../user/user_session.php");
+Session_start();
+$userSession = $_SESSION["userSession"];
+if (!$userSession) {
+  echo "<alert>你没有登陆！</alert>"
+
+  return;
+}
+$user_type = $userSession.getUsertype();
+?>
+<?php
 $w=1; 
 $workunitsql="select * from lf_workunit where $w order by id desc"; 
 $workunitquery=mysql_query($workunitsql);
@@ -107,7 +118,13 @@ $(function(){
                       <TD>用车计划名称:</TD>
                       <TD>
 						<select name="appname" style="width: 119px">
+              <?php 
+              if ($user_type == 3) {
+              ?>
 							<option selected="selected" value="固定用车计划">固定用车计划</option>
+              <?php
+              }
+              ?>
 							<option>临时用车计划</option>
 							<option>长途用车计划</option>
 						</select>

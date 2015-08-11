@@ -5,9 +5,10 @@ include("conn.php");//引入链接数据库
 if(!empty($_POST['username'])){ 
 	$username=$_POST['username']; 
 	$password=$_POST['password']; 
-	echo $sql="insert into lf_user(id,user_name,user_password, user_type, user_time) value (null,'$username', '$password', 1, now())" ; 
+  $user_department=$_POST['userdepartment'];
+	echo $sql="insert into lf_user(id,user_name,user_password, user_type, user_department, user_time) value (null,'$username', '$password', 1, $user_department, now())" ; 
 	mysql_query($sql); 
-	echo"插入成功"; 
+	echo"添加成功"; 
 } 
 ?> 
 <html>
@@ -141,12 +142,33 @@ $(function(){
                       <TD>&nbsp;</TD>
                       <TD>&nbsp;</TD>
                       <TD>
-                      	<select name="cartype" style="width: 100px">
-							<option value="1">科员 </option>
-							<option value="2">科长 </option>
-							<option value="3">处长 </option>
-							<option value="4">干部 </option>
+                      	<select name="usertype" style="width: 100px">
+							<option value="1">普通科员 </option>
+							<option value="2">主管 </option>
+							<option value="3">生产主管 </option>
+							<option value="4">调度 </option>
+              <option value="5">总经理 </option>
 						</select>
+                      </TD>
+                      <TD>&nbsp;</TD>
+                      <TD>&nbsp;</TD>
+                      <TD>&nbsp;</TD>
+                      <TD>&nbsp;</TD>
+                      <TD>&nbsp;</TD>
+                      <TD>&nbsp;</TD>
+                    </TR>
+                    <TR>
+                      <TD>部门:</TD>
+                      <TD>&nbsp;</TD>
+                      <TD>&nbsp;</TD>
+                      <TD>
+                        <select name="userdepartment" style="width: 100px">
+              <option value="1">部门1 </option>
+              <option value="2">部门2  </option>
+              <option value="3">部门3 </option>
+              <option value="4">部门4  </option>
+              <option value="5">部门5  </option>
+            </select>
                       </TD>
                       <TD>&nbsp;</TD>
                       <TD>&nbsp;</TD>

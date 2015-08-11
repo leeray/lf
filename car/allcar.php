@@ -2,6 +2,18 @@
 include("../header.php");
 include("../db/conn.php");
 ?>
+<?php
+include("../user/user_session.php");
+Session_start();
+$userSession = $_SESSION["userSession"];
+$user_type = $userSession.getUsertype();
+if ($user_type != 3 || $user_type != 5) {
+  echo "<alert>没有权限查看列表，只有调度和生产主管能看车辆列表！</alert>"
+
+  return;
+}
+?>
+
 <?php 
 if(!empty($_GET['carname'])){ 
 	$w=" carname like '%".$_GET['carname']."%'"; 
@@ -107,7 +119,6 @@ $query=mysql_query($sql);
                   <TBODY>
                     <TR style="FONT-WEIGHT: bold; FONT-STYLE: normal; BACKGROUND-COLOR: #eeeeee; TEXT-DECORATION: none">
                       <TD>#</TD>
-                      <TD>车辆名称</TD>
                       <TD>品牌</TD>
                       <TD>类型</TD>
                       <TD>车牌</TD>
@@ -119,9 +130,8 @@ $query=mysql_query($sql);
 					?> 
                     <TR style="FONT-WEIGHT: normal; FONT-STYLE: normal; BACKGROUND-COLOR: white; TEXT-DECORATION: none">
                       <TD><?php echo $rs['id']?></TD>
-                      <TD><a href="viewcar.php?id=<?php echo $rs['id'] ?>"><?php echo $rs['carname'] ?></a></TD>
                       <TD><?php echo $rs['carbrand'] ?></TD>
-                      <TD><?php echo $rs['cartype'] ?></TD>
+                      <TD><a href="viewcar.php?id=<?php echo $rs['id'] ?>"><?php echo $rs['cartype'] ?></a></TD>
                       <TD><?php echo $rs['caridnum'] ?></TD>
                       <TD><?php echo $rs['caryearcheckstarttime'] ?> </TD>
                       <TD>
